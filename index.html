@@ -16,8 +16,8 @@
 
     <h2>Ilmoittaudu Henrin Myyntivalmennukseen</h2>
     <form id="signupForm">
-        <input type="text" id="nimi" name="nimi" placeholder="Nimi" required>
-        <input type="email" id="sahkoposti" name="sahkoposti" placeholder="Sähköposti" required>
+        <input type="text" id="name" name="nimi" placeholder="Nimi" required>
+        <input type="email" id="email" name="sahkoposti" placeholder="Sähköposti" required>
         <button type="submit">Ilmoittaudu nyt!</button>
     </form>
 
@@ -27,13 +27,13 @@
         document.getElementById("signupForm").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            var nimi = document.getElementById("nimi").value;
-            var sahkoposti = document.getElementById("sahkoposti").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
 
             fetch("https://script.google.com/macros/s/AKfycbw82MKLb4hltyfPNPX7JdfQ4eQFO6qNXcpMTnNTUSKOL4hyXsotjwBp7QJ-XYlP6Y_J9w/exec", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams({ nimi: nimi, sahkoposti: sahkoposti })
+                body: new URLSearchParams({ nimi: name, sahkoposti: email })
             })
             .then(response => response.json())
             .then(data => {
