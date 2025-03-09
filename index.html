@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henrin Myyntivalmennus</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        form { max-width: 400px; margin: auto; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        button { background-color: #28a745; color: white; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+
+    <h2>Ilmoittaudu Henrin Myyntivalmennukseen</h2>
+    <form id="signupForm">
+        <input type="text" id="name" placeholder="Nimi" required>
+        <input type="email" id="email" placeholder="Sähköposti" required>
+        <button type="submit">Ilmoittaudu nyt!</button>
+    </form>
+
+    <p id="responseMessage" style="margin-top: 20px;"></p>
+
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            fetch("https://script.google.com/macros/s/AKfycbyHLumguuTCVZqt7QBXQH4Y6NtPMs-Hk8gaHcWq4LxYxlVziBf7M-3MicPQxG1pEVl5/exec", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ nimi: name, sahkoposti: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("responseMessage").textContent = data.message;
+            })
+            .catch(error => {
+                document.getElementById("responseMessage").textContent = "Virhe lähetyksessä.";
+            });
+        });
+    </script>
+
+</body>
+</html>
 
