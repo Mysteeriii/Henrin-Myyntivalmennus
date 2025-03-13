@@ -1,49 +1,157 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Henrin Myyntivalmennus</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        form { max-width: 400px; margin: auto; background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-        input, button { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        button { background-color: #28a745; color: white; font-size: 16px; cursor: pointer; }
-        button:hover { background-color: #218838; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henri Rantanen - Matalan kynnyksen myyntivalmennus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #22c1c3, #7b1fa2);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 10px;
+    }
+    .hero {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .highlight {
+      background: #e0f7fa;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+    .price-box {
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 400px;
+      text-align: center;
+      border: 2px dashed #ff9800;
+    }
+    .price-box h2 { margin: 0; }
+    .price-box p { margin: 10px 0; font-size: 1.2em; }
+    .btn {
+      background: #ff5722;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .content { max-width: 900px; margin: auto; padding: 20px; }
+    ul { list-style: none; padding: 0; }
+    ul li { padding: 15px 10px; border-bottom: 1px solid #ddd; position: relative; padding-left: 35px; }
+    ul li:before { content: '✔️'; position: absolute; left: 10px; }
+    .form-box {
+      background: #e8f5e9;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 40px auto;
+    }
+    .form-box input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    .form-box button {
+      width: 100%;
+      padding: 15px;
+      background: #43a047;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-    <h2>Ilmoittaudu Henrin Myyntivalmennukseen</h2>
-    <form id="signupForm">
-        <input type="text" id="name" name="nimi" placeholder="Nimi" required>
-        <input type="email" id="email" name="sahkoposti" placeholder="Sähköposti" required>
-        <button type="submit">Ilmoittaudu nyt!</button>
-    </form>
+<header>
+  <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Henri Rantanen kuva">
+  <h1>Henri Rantasen Matalan kynnyksen Myyntivalmennus</h1>
+  <p>Opettele myynnin taidot, joilla kasvatat tuloksia nopeasti – ilman stressiä ja pakkomyyntiä.</p>
+</header>
 
-    <p id="responseMessage" style="margin-top: 20px;"></p>
+<div class="hero">
+  <h1>Haluatko myydä enemmän ja helpommin?</h1>
+  <p>Tämä myyntivalmennus antaa sinulle käytännön taidot, joilla nostat myyntisi seuraavalle tasolle – vaikka et olisi aiemmin pitänyt itseäsi myyjänä.</p>
+  <div class="highlight">Vain nyt: OVH 500€ – Tarjoushintaan 176€ (sis. ALV)</div>
+  <a href="#ilmoittautuminen" class="btn">Ilmoittaudu nyt – Paikkoja rajoitetusti!</a>
+</div>
 
-    <script>
-        document.getElementById("signupForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+<div class="content">
+  <h2>Mitä tulet oppimaan?</h2>
+  <ul>
+    <li>Myynnin 7 lainalaisuutta – opi myynnin salaisuudet</li>
+    <li>Asenteen ja sisäisen puheen hallinta – luo voittajan mieli</li>
+    <li>Tavoitteiden ja ajanhallinnan keinot</li>
+    <li>Uusasiakashankinnan toimivat strategiat</li>
+    <li>Tuoteasiantuntemus, joka vakuuttaa asiakkaan</li>
+    <li>Kuinka toimia kaikkien ihmisten kanssa helposti</li>
+    <li>Esittely- ja myyntitekniikat, jotka myyvät puolestasi</li>
+    <li>Varmasti kaupan päättämisen taito</li>
+    <li>Kommunikoinnin 10 sääntöä, jotka avaa ovet myyntiin</li>
+  </ul>
 
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
+  <div class="price-box">
+    <h2>TARJOUS NYT: 176€ (OVH 500€)</h2>
+    <p>Varmista paikkasi ja nosta myyntisi uudelle tasolle!</p>
+    <a href="#ilmoittautuminen" class="btn">Ilmoittaudu mukaan</a>
+  </div>
+</div>
 
-            fetch("https://script.google.com/macros/s/AKfycbw82MKLb4hltyfPNPX7JdfQ4eQFO6qNXcpMTnNTUSKOL4hyXsotjwBp7QJ-XYlP6Y_J9w/exec", {
-                method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams({ nimi: name, sahkoposti: email })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("responseMessage").textContent = data.message;
-            })
-            .catch(error => {
-                document.getElementById("responseMessage").textContent = "Virhe lähetyksessä.";
-            });
-        });
-    </script>
+<div id="ilmoittautuminen" class="form-box">
+  <h2>Ilmoittaudu valmennukseen</h2>
+  <form action="https://script.google.com/macros/s/YOUR-SCRIPT-ID-HERE/exec" method="POST">
+    <input type="text" name="name" placeholder="Nimesi" required>
+    <input type="email" name="email" placeholder="Sähköpostisi" required>
+    <button type="submit">Varaa paikkasi nyt</button>
+  </form>
+</div>
+
+<div class="content">
+  <h2>Mikä lopputulos sinua odottaa?</h2>
+  <ul>
+    <li>Osaat myydä tehokkaasti ja luontevasti</li>
+    <li>Luot myyntipuheen, joka toimii</li>
+    <li>Kohtaat asiakkaat itsevarmasti</li>
+    <li>Kasvatat myyntituloksiasi nopeasti</li>
+  </ul>
+</div>
 
 </body>
 </html>
